@@ -35,17 +35,37 @@ alleles, frequencies = Read_Two_Column_File(file_path)
 # main loop
 if not silent:
     print(file_path, "\n", outFile)
-for loop in range(nSim):
 
-    father, mother, child, mutation_step, index = genFamilies(alleles, frequencies, 1)
-    child = mutationchild(child, mutation_step, index)
-    output = countincomp(child, father, mother)
-    count = counttrios(output)
-    compatibility_trios = compatibility_trios + count[0]
-    one_step_mutation_trios = one_step_mutation_trios + count[1]
-    two_step_mutation_trios = two_step_mutation_trios + count[2]
-    something_else_trios = something_else_trios + count[3]
-    exportOutTable(outFile, father, mother, child, mutation_step, index, output, display=not silent, save2file=save2File)
+statsFather = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+statsMother = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+compat = 0
+
+with open(outFile1, 'a') as f1:
+    for loop in range(nSim):
+
+        father, mother, child, mutation_step, index = genFamilies(alleles, frequencies, 1)
+        child = mutationchild(child, mutation_step, index)
+        distFatherMother = countincomp(child, father,mother)  # vector of size 2 -> [dist to father, dist to mother]
+
+        statsFather[int(distFatherMother[0])] += 1
+        statsMother[int(distFatherMother[1])] += 1
+        if distFatherMother[0] == 0 and distFatherMother[1] == 0 :
+            compat += 1
+
+        print(distFatherMother)
+        print("statsFather = ", statsFather)
+        print("statsMother = ", statsMother)
+        print(compat, "\t", statsFather[0], "\t", statsMother[0], "\t", statsFather[1], "\t", statsMother[1], "\t",
+              statsFather[2], "\t", statsMother[2], "\t", statsFather[3], "\t", statsMother[3], "\t", statsFather[4], "\t",
+              statsMother[4], "\t", statsFather[5], "\t", statsMother[5], "\t", statsFather[6], "\t", statsMother[6],
+              file=f1)
+        if save2File :
+            with open(outFile2, 'a') as f2 :
+                print(distFatherMother[0], "\t", distFatherMother[1], file=f2)
+                f2.close()
+
+        #exportOutTable(outFile3, father, mother, child, mutation_step, index, distFatherMother, display=not silent,
+                   #save2file=save2File)
 
 print("")
 print("Compatibilities: ", compatibility_trios,
