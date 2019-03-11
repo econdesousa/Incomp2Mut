@@ -11,6 +11,7 @@
 			<ul>
 				<li>Forcedmut_duos_X_MotherDaugter</li>
 				<li>Forcedmut_duos_X_fatherDaughter</li>
+				<li>Forcedmut_trios_X_Daughter</li>
 			</ul>
 	</ul>
 <li>FromFile:</li>
@@ -23,7 +24,8 @@
 		<li>X:</li>
 		<ul>
 			<li>FromFile_duos_X_MotherDaugter</li>
-			<li>FromFile_duos_X_fatherDaughter</li>	
+			<li>FromFile_duos_X_fatherDaughter</li>
+			<li>FromFile_trio_X_Daughter</li>	
 		</ul>
 	</ul>
 </ul>
