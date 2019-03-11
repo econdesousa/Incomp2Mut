@@ -56,7 +56,7 @@ with open(outFile1, 'a') as f1:
         father, mother, child, mutation_step, index = genFamiliesXson(alleles, frequencies)
         child, mutation_step = mutationRate(child, 0, incomprate, stepMut) # mut father allele
         print(mutation_step)
-        distFatherMother = countincomp(child, mother=mother)  # vector of size 2 -> [dist to father, dist to mother]
+        distFatherMother = countincomp(child, 0, mother)  # vector of size 2 -> [dist to father, dist to mother]
 
         statsFather[int(distFatherMother[0])] += 1
         statsMother[int(distFatherMother[1])] += 1

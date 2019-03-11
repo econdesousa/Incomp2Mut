@@ -26,18 +26,13 @@ something_else_trios = 0
 #       alleles
 #       freqs
 #       outFile
-file_path, outFile1, outFile2, outFile3 = outFileName(save2File, "ForcedMut_Trios_Aut")
+file_path, outFile1, outFile2, outFile3 = outFileName(save2File, "ForcedMut_Trios_X")
 alleles, frequencies = Read_Two_Column_File(file_path)
-print(outFile1)
-print(outFile2)
-print(outFile3)
 #alleles, frequencies = ReadMutRate(file_path + "mutationRate")
 
 # ####################################################
 # 4
 # main loop
-if not silent:
-    print(file_path, "\n", outFile3)
 
 statsFather = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 statsMother = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -46,7 +41,7 @@ compat = 0
 with open(outFile1, 'a') as f1:
     for loop in range(nSim):
 
-        father, mother, child, mutation_step, index = genFamilies(alleles, frequencies, 1)
+        father, mother, child, mutation_step, index = genFamiliesXdaughter(alleles, frequencies, 1)
         child = mutationchild(child, mutation_step, index)
         distFatherMother = countincomp(child, father,mother)  # vector of size 2 -> [dist to father, dist to mother]
 
@@ -67,8 +62,7 @@ with open(outFile1, 'a') as f1:
                 print(distFatherMother[0], "\t", distFatherMother[1], file=f2)
                 f2.close()
 
-        #exportOutTable(outFile3, father, mother, child, mutation_step, index, distFatherMother, display=not silent,
-                   #save2file=save2File)
+        exportOutTable(outFile, father, mother, child, mutation_step, index, distFatherMother, display=not silent, save2file=save2File)
 
 print("")
 print("Compatibilities: ", compatibility_trios,

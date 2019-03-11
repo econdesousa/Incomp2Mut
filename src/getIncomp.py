@@ -23,7 +23,7 @@ def alleledist(allele, lst1):
     lst2 = [abs(math.trunc(10*x - 10*allele)/10) for x in lst1]
     for it in range(len(lst2)):
         if lst2[it] != math.trunc(lst2[it]):
-            lst2[it] = math.trunc(lst2[it]) + 10000
+            lst2[it] = math.trunc(lst2[it]) + 1000
     return min(lst2)
 
 
@@ -42,7 +42,7 @@ def distexcludezero(num1, num2):
 def countincomp(child, father=0, mother=0):
     if father != 0:
         A = alleledist(child[0], father)
-        if len(child)>1:
+        if len(child) > 1:
             C = alleledist(child[1], father)
         else:
             C = 0
@@ -51,7 +51,7 @@ def countincomp(child, father=0, mother=0):
         C = 0
     if mother != 0:
         if len(child)>1:
-            B = alleledist(child[1], father)
+            B = alleledist(child[1], mother)
         else:
             B = 0
         D = alleledist(child[0], mother)
@@ -59,12 +59,19 @@ def countincomp(child, father=0, mother=0):
         B = 0
         D = 0
 
-    if A + B > C + D:
+    if len(child) == 1:
+        if A<D:
+            return [A, 0]
+        else:
+            return [0, D]
+    elif A + B > C + D:
         return [C, D]
     elif A + B == C + D:
-        if min([A,B]) < min([C,D]):
-            return [A,B]
+        if min([A, B]) < min([C, D]):
+            return [A, B]
         else:
-            return [C,D]
+            return [C, D]
     else:
         return [A, B]
+
+
