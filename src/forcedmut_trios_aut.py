@@ -26,7 +26,7 @@ something_else_trios = 0
 #       alleles
 #       freqs
 #       outFile
-file_path, outFile, outFile1, outFile2 = outFileName(save2File, "Incompatibilidades_autossomicos")
+file_path, outFile, outFile1, outFile2 = outFileName(save2File, "Incompatibilidades_autossomicos_trios")
 alleles, frequencies = Read_Two_Column_File(file_path)
 #alleles, frequencies = ReadMutRate(file_path + "mutationRate")
 

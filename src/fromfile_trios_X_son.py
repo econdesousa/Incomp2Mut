@@ -11,7 +11,7 @@ from counttrios_func import counttrios
 # ####################################################
 # 2
 # initialize variables
-nSim = 100000
+nSim = 1000
 silent = True  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
 save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
 
@@ -22,7 +22,7 @@ save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um fic
 #       alleles
 #       freqs
 #       outFile
-file_path, outFile1, outFile2, outFile3 = outFileName(save2File, DIR="triosMut")
+file_path, outFile1, outFile2, outFile3 = outFileName(save2File, DIR="triosMut_X_son")
 print(outFile1)
 print(outFile2)
 print(outFile3)
@@ -36,6 +36,7 @@ if save2File:
 
 alleles, frequencies = Read_Two_Column_File(file_path)
 incomprate, stepMut = ReadMutRate(file_path+"_mutationrate.txt")
+incomprate = 0.9
 #print(incomprate, stepMut)
 #alleles, frequencies = ReadMutRate(file_path + "mutationRate")
 
@@ -51,10 +52,9 @@ compat = 0
 with open(outFile1, 'a') as f1:
     for loop in range(nSim) :
 
-        father, mother, child, mutation_step, index = genFamilies(alleles, frequencies)
+        father, mother, child, mutation_step, index = genFamiliesXson(alleles, frequencies)
         child, mutation_step = mutationRate(child, 0, incomprate, stepMut) # mut father allele
-        child, mutation_step = mutationRate(child, 1, incomprate, stepMut) # mut mother allele
-        distFatherMother = countincomp(child, father, mother)  # vector of size 2 -> [dist to father, dist to mother]
+        distFatherMother = countincomp(child, mother=mother)  # vector of size 2 -> [dist to father, dist to mother]
 
         statsFather[int(distFatherMother[0])] += 1
         statsMother[int(distFatherMother[1])] += 1

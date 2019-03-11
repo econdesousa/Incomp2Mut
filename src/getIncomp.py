@@ -39,11 +39,21 @@ def distexcludezero(num1, num2):
         return 0
 
 
-def countincomp(child, father, mother=0):
-    A = alleledist(child[0], father)
-    C = alleledist(child[1], father)
+def countincomp(child, father=0, mother=0):
+    if father != 0:
+        A = alleledist(child[0], father)
+        if len(child)>1:
+            C = alleledist(child[1], father)
+        else:
+            C = 0
+    else:
+        A = 0
+        C = 0
     if mother != 0:
-        B = alleledist(child[1], mother)
+        if len(child)>1:
+            B = alleledist(child[1], father)
+        else:
+            B = 0
         D = alleledist(child[0], mother)
     else:
         B = 0
