@@ -11,7 +11,7 @@ from counttrios_func import counttrios
 # ####################################################
 # 2
 # initialize variables
-nSim = 10000
+nSim = 1000
 silent = True  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
 save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
 
@@ -36,7 +36,6 @@ if save2File:
 
 alleles, frequencies = Read_Two_Column_File(file_path)
 incomprate, stepMut = ReadMutRate(file_path+"_mutationrate.txt")
-incomprate = 0.1
 #print(incomprate, stepMut)
 #alleles, frequencies = ReadMutRate(file_path + "mutationRate")
 
