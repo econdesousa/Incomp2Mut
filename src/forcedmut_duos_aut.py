@@ -26,7 +26,7 @@ something_else_trios = 0
 #       alleles
 #       freqs
 #       outFile
-file_path, outFile, outFile1, outFile2 = outFileName(save2File, "Incompatibilidades_autossomicos_duos")
+file_path, outFile, outFile1, outFile2 = outFileName(save2File, "ForcedMut_duos_aut")
 alleles, frequencies = Read_Two_Column_File(file_path)
 #alleles, frequencies = ReadMutRate(file_path + "mutationRate")
 
@@ -49,7 +49,7 @@ with open(outFile1, 'a') as f1:
 
         statsFather[int(distFatherMother[0])] += 1
         statsMother[int(distFatherMother[1])] += 1
-        if distFatherMother[0] == 0 and distFatherMother[1] == 0 :
+        if distFatherMother[0] == 0 and distFatherMother[1] == 0:
             compat += 1
 
         print(distFatherMother)

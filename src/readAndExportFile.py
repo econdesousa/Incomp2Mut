@@ -43,14 +43,11 @@ def ReadMutRate(file_name,header=1):
     with open(file_name, 'r') as f:
         it=0
         for line in f:
-            print(line)
             if it >= header:
                 p = line.split()
                 incomprate = float(p[0])
                 stepMut = float(p[1])
             it +=1
-
-    print("incomprate =",incomprate,"stepMut =",stepMut)
     return incomprate, stepMut
 
 

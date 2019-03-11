@@ -22,7 +22,7 @@ save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um fic
 #       alleles
 #       freqs
 #       outFile
-file_path, outFile1, outFile2, outFile3 = outFileName(save2File, DIR="duosMut")
+file_path, outFile1, outFile2, outFile3 = outFileName(save2File, DIR="FromFile_Duos_Aut")
 print(outFile1)
 print(outFile2)
 print(outFile3)
@@ -36,6 +36,7 @@ if save2File:
 
 alleles, frequencies = Read_Two_Column_File(file_path)
 incomprate, stepMut = ReadMutRate(file_path+"_mutationrate.txt")
+print("incomprate =",incomprate,"stepMut =",stepMut)
 #print(incomprate, stepMut)
 #alleles, frequencies = ReadMutRate(file_path + "mutationRate")
 
