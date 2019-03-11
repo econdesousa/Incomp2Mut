@@ -1,27 +1,29 @@
 <ul>
 
-<li>Autossomicos:</li>
+<li>ForcedMut:</li>
 	<ul>
-		<li>Taxa de mutacao "real":</li>
+		<li>Autossomicos:</li>
 			<ul>
-				<li>trios_aut_mutate: Gerar mutacoes de acordo com taxa de mutacao lida dum ficheiro</li>
-				<li>duos_aut_mutate:  Gerar mutacoes de acordo com taxa de mutacao lida dum ficheiro</li>
+				<li>Forcedmut_duos_aut</li>
+				<li>Forcedmut_trios_aut</li>
 			</ul>
-		<li>Forcar Mutacoes:</li>
+		<li>X:</li>
 			<ul>
-				<li>trios_autossomicos: Forca mutacoes com numeros de steps pre-definido</li>
-				<li>duos_autossomicos: Forca mutacoes com numeros de steps pre-definido</li>
+				<li>Forcedmut_duos_X_MotherDaugter</li>
+				<li>Forcedmut_duos_X_fatherDaughter</li>
 			</ul>
 	</ul>
-<li>Chrom X:</li>
+<li>FromFile:</li>
 	<ul>
-		<li>Trios:</li>
+		<li>Autossomicos:</li>
 		<ul>
-			<li>Pai_Mae_FILHA</li>
-			<ul>
-				<li>trios_X_daughter_mutate: Gerar mutacoes de acordo com taxa de mutacao lida dum ficheiro</li>
-				<li>trios_X_Son_mutate: Gerar mutacoes de acordo com taxa de mutacao lida dum ficheiro</li>
-			</ul>
+			<li>FromFile_duos_aut</li>
+			<li>FromFile_trios_aut</li>
+		</ul>
+		<li>X:</li>
+		<ul>
+			<li>FromFile_duos_X_MotherDaugter</li>
+			<li>FromFile_duos_X_fatherDaughter</li>	
 		</ul>
 	</ul>
 </ul>
