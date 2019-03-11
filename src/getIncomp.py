@@ -27,6 +27,10 @@ def alleledist(allele, lst1):
     return min(lst2)
 
 
+
+
+
+
 #only works for values >=0
 def distexcludezero(num1, num2):
     if max([num1, num2]) > 0:
