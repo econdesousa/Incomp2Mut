@@ -11,7 +11,7 @@ from counttrios_func import counttrios
 # ####################################################
 # 2
 # initialize variables
-nSim = 1000000
+nSim = 1000
 silent = True  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
 save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
 
@@ -53,7 +53,9 @@ with open(outFile1, 'a') as f1:
 
         father, mother, child, mutation_step, index = genFamilies(alleles, frequencies)
         child, mutation_step = mutationRate(child, 0, incomprate, stepMut) # mut father allele
+        print(mutation_step)
         child, mutation_step = mutationRate(child, 1, incomprate, stepMut) # mut mother allele
+        print(mutation_step)
         distFatherMother = countincomp(child, father, mother)  # vector of size 2 -> [dist to father, dist to mother]
 
         statsFather[int(distFatherMother[0])] += 1
