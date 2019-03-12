@@ -26,8 +26,8 @@
 		<ul>
 			<li>FromFile_duos_X_MotherDaugter</li>
 			<li>FromFile_duos_X_fatherDaughter</li>
-			<li>FromFile_duo_X_MotherSon</li>	
-			<li>FromFile_trio_X_Daughter</li>	
+			<li>FromFile_duos_X_MotherSon</li>	
+			<li>FromFile_trios_X_Daughter</li>	
 		</ul>
 	</ul>
 </ul>
