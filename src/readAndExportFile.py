@@ -52,10 +52,13 @@ def ReadMutRate(file_name,header=1):
 
 
 
-def exportOutTable(outFile,father, mother, child, mutation_step, index, output, display=True,save2file=True):
+def exportOutTable(outFile,father, mother, child, mutation_step, index, output, display=True,save2file=True, iteration=0):
     if save2file:
         with open(outFile, 'a') as f:
-            print("   father       mother\n          child", file=f)
+            if iteration>0:
+                print(iteration,"   father       mother\n          child", file=f)
+            else:
+                print("   father       mother\n          child", file=f)
             print(father, mother, "\n     ", child, "\n     ", output,  mutation_step, index, "\n", file=f)
 
     if display:
