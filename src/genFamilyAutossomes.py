@@ -1,6 +1,9 @@
 from random import choices, seed
 from numpy import *
-seed(9001)
+import pyperclip
+seed2Use = pyperclip.paste()
+print(seed2Use)
+seed(seed2Use)
 
 
 def mutation(step):

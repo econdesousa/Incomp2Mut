@@ -2,17 +2,17 @@
 # 1
 # import modules and functions
 
-
+seed = 9001
+import pyperclip
+pyperclip.copy(seed)
 from genFamilyAutossomes import *
 from getIncomp import *
 from readAndExportFile import *
-from counttrios_func import counttrios
-
 # ####################################################
 # 2
 # initialize variables
 nSim = 100
-silent = False  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
+silent = True  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
 save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
 compatibility_trios = 0
 one_step_mutation_trios = 0
@@ -28,7 +28,7 @@ something_else_trios = 0
 #       outFile1:	 *_stats.txt
 #       outFile2:	 *_vecFatherMother.txt
 #       outFile3:	 *_Pedigrees.txt
-file_path, outFile1, outFile2, outFile3 = outFileName(save2File, "ForcedMut_duos_aut")
+file_path, outFile1, outFile2, outFile3 = outFileName(save2File, "ForcedMut_Duos_Aut")
 alleles, frequencies = Read_Two_Column_File(file_path)
 #alleles, frequencies = ReadMutRate(file_path + "mutationRate")
 
@@ -46,16 +46,13 @@ for loop in range(nSim):
 
     father, mother, child, mutation_step, index = genFamilies(alleles, frequencies, 1)
     child = mutationchild(child, mutation_step, index)
-    distFatherMother = countincomp(child, father)  # vector of size 2 -> [dist to father, dist to mother]
+    distFatherMother = countincomp(child, father)  # vector of size 2 -> [dist to father, 0] %%%no mother%%%
 
     statsFather[int(distFatherMother[0])] += 1
     statsMother[int(distFatherMother[1])] += 1
     if distFatherMother[0] == 0 and distFatherMother[1] == 0:
         compat += 1
 
-    #print(distFatherMother)
-    #print("statsFather = ", statsFather)
-    #print("statsMother = ", statsMother)
     if save2File:
         print(compat, "\t", statsFather[0], "\t", statsMother[0], "\t", statsFather[1], "\t", statsMother[1], "\t",
               statsFather[2], "\t", statsMother[2], "\t", statsFather[3], "\t", statsMother[3], "\t", statsFather[4], "\t",
