@@ -1,32 +1,3 @@
-######################################
-######################################
-######################################
-######################################
-######################################
-# This file is just a copy
-# need revising genFamily*****
-# function that is used
-######################################
-######################################
-######################################
-print("######################################\n######################################\n######################################\n# This file is just a copy\n# need revising genFamily***** \n# function that is used\n######################################\n######################################\n######################################")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ####################################################
 # 1
 # import modules and functions
@@ -57,7 +28,7 @@ something_else_trios = 0
 #       outFile1:	 *_stats.txt
 #       outFile2:	 *_vecFatherMother.txt
 #       outFile3:	 *_Pedigrees.txt
-file_path, outFile1, outFile2, outFile3 = outFileName(save2File, "ForcedMut_Trios_Daughter_X")
+file_path, outFile1, outFile2, outFile3 = outFileName(save2File, "ForcedMut_Trios_MotherDaughter_X")
 alleles, frequencies = Read_Two_Column_File(file_path)
 #alleles, frequencies = ReadMutRate(file_path + "mutationRate")
 
