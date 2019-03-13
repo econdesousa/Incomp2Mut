@@ -48,7 +48,6 @@ for loop in range(nSim):
     child = mutationchild(child, mutation_step, index)
     distFatherMother = countincomp(child, father)  # vector of size 2 -> [dist to father, 0] %%%no mother%%%
 
-    statsFather[int(distFatherMother[0])] += 1
     statsMother[int(distFatherMother[1])] += 1
     if distFatherMother[0] == 0 and distFatherMother[1] == 0:
         compat += 1

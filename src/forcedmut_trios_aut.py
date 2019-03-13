@@ -47,7 +47,6 @@ for loop in range(nSim):
     father, mother, child, mutation_step, index = genFamilies(alleles, frequencies, 1)
     child = mutationchild(child, mutation_step, index)
     distFatherMother = countincomp(child, father, mother)  # vector of size 2 -> [dist to father, dist to mother]
-
     statsFather[int(distFatherMother[0])] += 1
     statsMother[int(distFatherMother[1])] += 1
     if distFatherMother[0] == 0 and distFatherMother[1] == 0:
