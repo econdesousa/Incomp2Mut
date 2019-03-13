@@ -56,12 +56,22 @@ def exportOutTable(outFile,father, mother, child, mutation_step, index, output, 
     if save2file:
         with open(outFile, 'a') as f:
             if iteration>0:
-                print(iteration,"   father       mother\n          child", file=f)
+                print(father, mother, "\n     ", child, "\n     ", output,  mutation_step, index, "\t", "iteration: ", iteration, file=f)
             else:
-                print("   father       mother\n          child", file=f)
-            print(father, mother, "\n     ", child, "\n     ", output,  mutation_step, index, "\n", file=f)
+                print(father, mother, "\n     ", child, "\n     ", output,  mutation_step, index, file=f)
+
 
     if display:
         print("   father       mother\n          child")
         print(father, mother, "\n     ", child, "\n     ", output, mutation_step, index, "\n")
+
+
+def initializeOutFiles(outFile1, outFile2, outFile3):
+    f1 = open(outFile1, 'w')  # *_vecFatherMother.txt
+    print("compat \t F[0] \t M[0] \t F[1] \t M[1] \t F[2] \t M[2] \t F[3] \t M[3] \t F[4] \t M[4] \t F[5] \t M[5] \t F[6] \t M[6] \t iteration",file=f1)
+    f2 = open(outFile2, 'w')
+    print("d2F \t d2M \t iteration", file=f2)
+    f3 = open(outFile3, 'w')
+    f3.close()
+    return f1, f2
 
