@@ -126,7 +126,6 @@ def  countincomp(child, father=0, mother=0):
             print("###########################################")
             D = 0
 
-        print([A, D])
         return [A, D]
 
     else:

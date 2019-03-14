@@ -11,7 +11,7 @@ from readAndExportFile import *
 # ####################################################
 # 2
 # initialize variables
-nSim = 100
+nSim = 10000
 silent = True  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
 save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
 
@@ -28,7 +28,7 @@ save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um fic
 #       outFile1:	 *_stats.txt
 #       outFile2:	 *_vecFatherMother.txt
 #       outFile3:	 *_Pedigrees.txt
-file_path, outFile1, outFile2, outFile3 = outFileName(save2File, "FromFile_Duos_MotherDaughter_X")
+file_path, outFile1, outFile2, outFile3 = outFileName(save2File, "FromFile_Duos_FatherDaughter_X")
 alleles, frequencies = Read_Two_Column_File(file_path)
 incomprate, stepMut = ReadMutRate(file_path+"_mutationrate.txt")
 print("incomprate =",incomprate,"stepMut =",stepMut)
@@ -47,7 +47,7 @@ for loop in range(nSim):
     father, mother, child, mutation_step, index = genFamiliesXdaughter(alleles, frequencies)
     child, mutation_step = mutationRate(child, 0, incomprate, stepMut)  # mut father allele
     child, mutation_step = mutationRate(child, 1, incomprate, stepMut)  # mut mother allele
-    distFatherMother = countincomp(child, 0, mother)  # vector of size 2 -> [dist to father, dist to mother]
+    distFatherMother = countincomp(child, father, 0)  # vector of size 2 -> [dist to father, dist to mother]
     statsFather[int(distFatherMother[0])] += 1
     statsMother[int(distFatherMother[1])] += 1
     if distFatherMother[0] == 0 and distFatherMother[1] == 0:
