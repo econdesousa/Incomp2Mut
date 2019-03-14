@@ -3,15 +3,15 @@
 	<ul>
 		<li>Autossomicos:</li>
 			<ul>
-				<li>Forcedmut_duos_aut</li>
-				<li>Forcedmut_trios_aut</li>
+				<li>Forcedmut_duos_aut: DONE</li>
+				<li>Forcedmut_trios_aut: DONE</li>
 			</ul>
 		<li>X:</li>
 			<ul>
-				<li>Forcedmut_duos_X_MotherDaugter</li>
-				<li>Forcedmut_duos_X_fatherDaughter</li>
+				<li>Forcedmut_duos_X_MotherDaugter: DONE</li>
+				<li>Forcedmut_duos_X_fatherDaughter: DONE</li>
 				<li>Forcedmut_duos_X_MotherSon</li>
-				<li>Forcedmut_trios_X_Daughter</li>
+				<li>Forcedmut_trios_X_Daughter: DONE</li>
 			</ul>
 	</ul>
 <li>FromFile:</li>

@@ -61,7 +61,7 @@ def genFamilies(alleles, frequencies, mutStep=1):
 
 # 3.2 X chromossome and female child
 def genFamiliesXdaughter(alleles, frequencies, mutStep=1):
-    father = choices(alleles, frequencies, k=1) # father has one allele
+    father = choices(alleles, frequencies, k=1)  # father has one allele
     mother = choices(alleles, frequencies, k=2)
 
     child = childof(father, mother)
@@ -76,7 +76,7 @@ def genFamiliesXson(alleles, frequencies, mutStep=1):
     mother = choices(alleles, frequencies, k=2)
 
     child = childof(father, mother)
-    child = [child[1]] # child has just one allele.
+    child = [child[1]]  # child has just one allele.
     # To allow us to use func childof, two alleles are generated and one is then removed
     index = 0 #just one allele, thus index must be 0
     mutation_step = mutation(mutStep)

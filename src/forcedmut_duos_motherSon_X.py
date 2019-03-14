@@ -28,7 +28,7 @@ something_else_trios = 0
 #       outFile1:	 *_stats.txt
 #       outFile2:	 *_vecFatherMother.txt
 #       outFile3:	 *_Pedigrees.txt
-file_path, outFile1, outFile2, outFile3 = outFileName(save2File, "ForcedMut_Duos_MotherDaughter_X")
+file_path, outFile1, outFile2, outFile3 = outFileName(save2File, "ForcedMut_Duos_MotherSon_X")
 alleles, frequencies = Read_Two_Column_File(file_path)
 #alleles, frequencies = ReadMutRate(file_path + "mutationRate")
 
@@ -44,9 +44,9 @@ compat = 0
 
 for loop in range(nSim):
 
-    father, mother, child, mutation_step, index = genFamiliesXdaughter(alleles, frequencies, 1)
+    father, mother, child, mutation_step, index = genFamiliesXson(alleles, frequencies, 1)
     child = mutationchild(child, mutation_step, index)
-    distFatherMother = countincomp(child, 0, mother)  # vector of size 2 -> [dist to father, dist to mother]
+    distFatherMother = countincomp(child, 0, mother)  # vector of size 2 -> [0, dist to mother]
     statsFather[int(distFatherMother[0])] += 1
     statsMother[int(distFatherMother[1])] += 1
     if distFatherMother[0] == 0 and distFatherMother[1] == 0:

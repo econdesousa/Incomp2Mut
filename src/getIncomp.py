@@ -62,17 +62,17 @@ def  countincomp(child, father=0, mother=0):
     if father == 0 and mother == 0:
         exit("no father, no mother, nothing to do")
 
-    if len(child)==2: #(autossomes or X chrom for female child)
-        if father == 0: #No father available
-            if mother != 0: # redundancy
+    if len(child) == 2:  # (autossomes or X chrom for female child)
+        if father == 0:  # No father available
+            if mother != 0:  # redundancy
                 A = 0
                 B = alleledist(child[1], mother)
                 C = 0
                 D = alleledist(child[0], mother)
             else:
                 exit("no father, no mother, nothing to do")
-        elif mother == 0: #No mother available
-            if father != 0: # redundancy
+        elif mother == 0:  # No mother available
+            if father != 0:  # redundancy
                 A = alleledist(child[0], father)
                 B = 0
                 C = alleledist(child[1], father)
@@ -97,35 +97,36 @@ def  countincomp(child, father=0, mother=0):
         else:
             return [A, B]
 
-    elif len(child)==1: # male X chrom
-        if len(father) != 0: # shouldn't occur
+    elif len(child) == 1:  # male X chrom
+        if father != 0:  # shouldn't occur
             print("###########################################")
             print("###########################################")
             print("###########################################")
             print("Child -> male")
             print("X chromossome")
-            print("Father shouldn't be available")
+            print("Father shouldn't be available: line 107")
             print("###########################################")
             print("###########################################")
             print("###########################################")
 
         A=0
 
-        if len(mother) != 0:
+        if mother != 0:
             D = alleledist(child[0], mother)
-        else: # shouldn't occur
+        else:  # shouldn't occur
             print("###########################################")
             print("###########################################")
             print("###########################################")
             print("Child -> male")
             print("X chromossome")
-            print("Father shouldn't be available")
+            print("Father shouldn't be available: line 122")
             print("Father and Mother: both missing")
             print("###########################################")
             print("###########################################")
             print("###########################################")
             D = 0
 
+        print([A, D])
         return [A, D]
 
     else:
