@@ -18,8 +18,8 @@
 	<ul>
 		<li>Autossomicos:</li>
 		<ul>
-			<li>FromFile_duos_aut</li>
-			<li>FromFile_trios_aut</li>
+			<li>FromFile_duos_aut: DONE</li>
+			<li>FromFile_trios_aut: DONE</li>
 		</ul>
 		<li>X:</li>
 		<ul>
