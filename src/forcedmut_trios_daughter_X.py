@@ -1,32 +1,3 @@
-######################################
-######################################
-######################################
-######################################
-######################################
-# This file is just a copy
-# need revising genFamily*****
-# function that is used
-######################################
-######################################
-######################################
-print("######################################\n######################################\n######################################\n# This file is just a copy\n# need revising genFamily***** \n# function that is used\n######################################\n######################################\n######################################")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ####################################################
 # 1
 # import modules and functions
@@ -41,7 +12,7 @@ from readAndExportFile import *
 # 2
 # initialize variables
 nSim = 100
-silent = True  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
+silent = False  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
 save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
 compatibility_trios = 0
 one_step_mutation_trios = 0
