@@ -60,7 +60,7 @@ for loop in range(nSim):
         print(distFatherMother[0], "\t", distFatherMother[1], "\t", loop+1, file=f2)
 
     exportOutTable(outFile3, father, mother, child, mutation_step, index, distFatherMother,
-                   display=not silent,save2file=save2File,iteration=loop+1)
+                   display=not silent, save2file=save2File,iteration=loop+1)
 
 
 
