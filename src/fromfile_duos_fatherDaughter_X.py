@@ -16,10 +16,6 @@ silent = True  # Modo silencioso, Qd fore para correr a serio com muito casos o 
 save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
 
 
-
-
-
-
 # ####################################################
 # 3
 # load data
@@ -31,7 +27,7 @@ save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um fic
 file_path, outFile1, outFile2, outFile3 = outFileName(save2File, "FromFile_Duos_FatherDaughter_X")
 alleles, frequencies = Read_Two_Column_File(file_path)
 incomprate, stepMut = ReadMutRate(file_path+"_mutationrate.txt")
-print("incomprate =",incomprate,"stepMut =",stepMut)
+
 if save2File:
     f1, f2 = initializeOutFiles(outFile1, outFile2, outFile3)
 
@@ -65,14 +61,3 @@ for loop in range(nSim):
 
 f1.close()
 f2.close()
-
-print("")
-print("compatibilities = ", compat)
-print("Compatibilities: ", statsFather[0]+statsMother[0],
-      "\nOne step mutations: ", statsFather[1]+statsMother[1],
-      "\nTwo steps mutation: ", statsFather[2]+statsMother[2],
-      "\nThis is something else: ", statsFather[3]+statsMother[3], "\n\n")
-print("Compatibility frequency: ", (statsFather[0]+statsMother[0])/(2*nSim),
-      "\nOne step mutation frequency: ", (statsFather[1]+statsMother[1])/(2*nSim),
-      "\nTwo steps mutation frequency: ", (statsFather[2]+statsMother[2])/(2*nSim),
-      "\nThis is something else: ", (statsFather[3]+statsMother[3])/(2*nSim))

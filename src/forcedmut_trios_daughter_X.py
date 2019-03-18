@@ -12,7 +12,7 @@ from readAndExportFile import *
 # 2
 # initialize variables
 nSim = 100
-silent = False  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
+silent = True  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
 save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
 compatibility_trios = 0
 one_step_mutation_trios = 0
@@ -63,17 +63,5 @@ for loop in range(nSim):
     exportOutTable(outFile3, father, mother, child, mutation_step, index, distFatherMother,
                    display=not silent,save2file=save2File,iteration=loop+1)
 
-
 f1.close()
 f2.close()
-
-
-print("")
-print("Compatibilities: ", compatibility_trios,
-      "\nOne step mutations: ", one_step_mutation_trios,
-      "\nTwo steps mutation: ", two_step_mutation_trios,
-      "\nThis is something else: ", something_else_trios, "\n\n")
-print("Compatibility frequency: ", compatibility_trios/(nSim),
-      "\nOne step mutation frequency: ", one_step_mutation_trios/(nSim),
-      "\nTwo steps mutation frequency: ", two_step_mutation_trios/(nSim),
-      "\nThis is something else: ", something_else_trios/(nSim))

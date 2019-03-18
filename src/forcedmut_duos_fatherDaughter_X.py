@@ -62,17 +62,5 @@ for loop in range(nSim):
     exportOutTable(outFile3, father, mother, child, mutation_step, index, distFatherMother,
                    display=not silent,save2file=save2File,iteration=loop+1)
 
-
 f1.close()
 f2.close()
-
-
-print("")
-print("Compatibilities: ", compatibility_trios,
-      "\nOne step mutations: ", one_step_mutation_trios,
-      "\nTwo steps mutation: ", two_step_mutation_trios,
-      "\nThis is something else: ", something_else_trios, "\n\n")
-print("Compatibility frequency: ", compatibility_trios/(nSim),
-      "\nOne step mutation frequency: ", one_step_mutation_trios/(nSim),
-      "\nTwo steps mutation frequency: ", two_step_mutation_trios/(nSim),
-      "\nThis is something else: ", something_else_trios/(nSim))

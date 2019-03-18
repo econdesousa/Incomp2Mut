@@ -76,14 +76,4 @@ with open(outFile1, 'a') as f1:
                        save2file=save2File)
 
 f1.close()
-
-print("")
-print("compatibilities = ", compat)
-print(#"Compatibilities: ", statsFather[0]+statsMother[0],
-      "\nOne step mutations: ", statsFather[1]+statsMother[1],
-      "\nTwo steps mutation: ", statsFather[2]+statsMother[2],
-      "\nThis is something else: ", statsFather[3]+statsMother[3], "\n\n")
-print("Compatibility frequency: ", (statsFather[0]+statsMother[0])/(2*nSim),
-      "\nOne step mutation frequency: ", (statsFather[1]+statsMother[1])/(2*nSim),
-      "\nTwo steps mutation frequency: ", (statsFather[2]+statsMother[2])/(2*nSim),
-      "\nThis is something else: ", (statsFather[3]+statsMother[3])/(2*nSim))
+f2.close()
