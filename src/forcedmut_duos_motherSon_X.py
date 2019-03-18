@@ -68,4 +68,4 @@ def ForcedMut_Duos_MotherSon_X(PATH="Markers/APOAI1.txt",nMut=1,nSim=100):
     f2.close()
 
 
-ForcedMut_Duos_MotherSon_X(PATH="Markers/APOAI1.txt",nMut=5,nSim=100)
+#ForcedMut_Duos_MotherSon_X(PATH="Markers/APOAI1.txt",nMut=5,nSim=100)

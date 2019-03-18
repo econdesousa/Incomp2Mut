@@ -68,4 +68,4 @@ def ForcedMut_Trios_Daughter_X(PATH="Markers/APOAI1.txt",nMut=1,nSim=100):
     f2.close()
 
 
-ForcedMut_Trios_Daughter_X(PATH="Markers/APOAI1.txt",nMut=2,nSim=100)
+#ForcedMut_Trios_Daughter_X(PATH="Markers/APOAI1.txt",nMut=2,nSim=100)

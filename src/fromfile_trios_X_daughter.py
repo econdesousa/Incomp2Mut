@@ -64,6 +64,7 @@ def FromFile_Trios_Daughter_X(PATH="Markers/APOAI1.txt", nSim=100):
     f1.close()
     f2.close()
 
+    '''
     print("")
     print("compatibilities = ", compat)
     print("Compatibilities: ", statsFather[0]+statsMother[0],
@@ -74,6 +75,7 @@ def FromFile_Trios_Daughter_X(PATH="Markers/APOAI1.txt", nSim=100):
           "\nOne step mutation frequency: ", (statsFather[1]+statsMother[1])/(2*nSim),
           "\nTwo steps mutation frequency: ", (statsFather[2]+statsMother[2])/(2*nSim),
           "\nThis is something else: ", (statsFather[3]+statsMother[3])/(2*nSim))
+    '''
 
 
-FromFile_Trios_Daughter_X() #PATH="Markers/D2S1338.txt")
+#FromFile_Trios_Daughter_X() #PATH="Markers/D2S1338.txt")

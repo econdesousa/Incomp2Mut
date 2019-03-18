@@ -64,4 +64,4 @@ def FromFile_Duos_Aut(PATH="Markers/APOAI1.txt",nSim=100):
     f1.close()
     f2.close()
 
-FromFile_Duos_Aut(PATH="Markers/APOAI1.txt",nSim=1000)
+#FromFile_Duos_Aut(PATH="Markers/APOAI1.txt",nSim=1000)

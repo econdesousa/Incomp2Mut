@@ -2,7 +2,7 @@
 # 1
 # import modules and functions
 
-seed = 9001
+seed = 9240417
 import pyperclip
 pyperclip.copy(seed)
 from genFamilyAutossomes import *
@@ -67,4 +67,4 @@ def ForcedMut_Trios_Aut(PATH="Markers/APOAI1.txt",nMut=1,nSim=100):
     f2.close()
 
 
-ForcedMut_Trios_Aut(PATH="Markers/APOAI1.txt",nMut=3,nSim=100)
+#ForcedMut_Trios_Aut(PATH="Markers/APOAI1.txt",nMut=3,nSim=100)

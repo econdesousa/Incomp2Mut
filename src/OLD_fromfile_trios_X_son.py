@@ -88,4 +88,4 @@ def FromFile_Trios_X_Son(PATH="Markers/APOAI1.txt", nSim=100):
           "\nTwo steps mutation frequency: ", (statsFather[2]+statsMother[2])/(2*nSim),
           "\nThis is something else: ", (statsFather[3]+statsMother[3])/(2*nSim))
 
-FromFile_Trios_X_Son(PATH="Markers/APOAI1.txt",nSim=1000)
+#FromFile_Trios_X_Son(PATH="Markers/APOAI1.txt",nSim=1000)
