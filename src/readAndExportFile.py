@@ -3,10 +3,17 @@ from tkinter import filedialog
 import os
 
 
-def outFileName(save2File,DIR="output"):
+def outFileName(save2File, DIR="output", fp=0):
     root = tk.Tk()
     root.withdraw()
-    file_path = filedialog.askopenfilename()
+    if fp == 0:
+        file_path = filedialog.askopenfilename()
+    elif isinstance(fp, str):
+        file_path = fp
+    else:
+        exit("no \"marker data\" available")
+
+    print(file_path)
     inDir = os.path.dirname(file_path)
     baseName=os.path.basename(file_path)
     outDir = os.path.join(inDir, DIR)
@@ -33,8 +40,6 @@ def Read_Two_Column_File(file_name, header=1, normalize=True):
 
     if normalize:
         y = [float(i)/sum(y) for i in y]
-
-
 
     return x, y
 
