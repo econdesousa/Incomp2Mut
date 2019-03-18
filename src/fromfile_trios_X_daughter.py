@@ -8,14 +8,15 @@ pyperclip.copy(seed)
 from genFamilyAutossomes import *
 from getIncomp import *
 from readAndExportFile import *
-# ####################################################
-# 2
-# initialize variables
-nSim = 100
-silent = True  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
-save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
 
-def FromFile_Trios_Daughter_X(PATH="D:/Dropbox/Post-Doc/Colaboracoes/Nadia_Simulations/SofiaAntaoSousa/Incomp2Mut/src/Markers/APOAI1.txt"):
+
+def FromFile_Trios_Daughter_X(PATH="Markers/APOAI1.txt", nSim=100):
+    # ####################################################
+    # 2
+    # initialize variables
+    silent = True  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
+    save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
+
     # ####################################################
     # 3
     # load data
@@ -75,4 +76,4 @@ def FromFile_Trios_Daughter_X(PATH="D:/Dropbox/Post-Doc/Colaboracoes/Nadia_Simul
           "\nThis is something else: ", (statsFather[3]+statsMother[3])/(2*nSim))
 
 
-FromFile_Trios_Daughter_X(PATH="D:/Dropbox/Post-Doc/Colaboracoes/Nadia_Simulations/SofiaAntaoSousa/Incomp2Mut/src/Markers/D2S1338.txt")
+FromFile_Trios_Daughter_X() #PATH="Markers/D2S1338.txt")
