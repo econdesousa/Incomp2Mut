@@ -95,18 +95,18 @@ def exportReport(outFileName, inFileName, d2F, d2M):
 
     tmp=inFileName.split(sep=".txt")
     inFileName=tmp[0]
-    fid = open(outFileName,'w')
+    fid = open(outFileName,'a')
     index=[]
     for i in range(len(cnt)):
         index.append('['+str(unique_rows[i, 0])+' , '+str(unique_rows[i, 1])+']')
         print(inFileName, "\t", unique_rows[i, 0], "\t", unique_rows[i, 1], "\t", cnt[i], file=fid)
         inFileName = ""
 
-    df = pd.DataFrame({'cnt':cnt},index=index)
-    ax = df.plot.bar(rot=0)
-    outDir = os.path.dirname(outFileName)
-    with PdfPages(os.path.join(outDir,tmp[0]+'.pdf')) as pdf:
-        pdf.savefig()
+    #df = pd.DataFrame({'cnt':cnt},index=index)
+    #ax = df.plot.bar(rot=0)
+    #outDir = os.path.dirname(outFileName)
+    #with PdfPages(os.path.join(outDir,tmp[0]+'.pdf')) as pdf:
+    #    pdf.savefig()
 
     fid.close()
 
