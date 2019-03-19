@@ -22,7 +22,7 @@ root = tk.Tk()
 root.withdraw()
 WorkingDir = filedialog.askdirectory(initialdir=os.path.join(os.getcwd(),"Markers"),title='Please select a directory')
 
-WorkDirList=list=os.listdir(WorkingDir)
+WorkDirList=os.listdir(WorkingDir)
 
 tmpList=[x for x in WorkDirList if '.txt' in x]
 finalList=[x for x in tmpList if 'mutationrate' not in x]
