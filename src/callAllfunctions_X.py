@@ -24,7 +24,7 @@ WorkDirList=os.listdir(WorkingDir)
 tmpList=[x for x in WorkDirList if '.txt' in x]
 finalList=[x for x in tmpList if 'mutationrate' not in x]
 
-NumbSymulations = 10**6
+NumbSymulations = 10**2
 NumbMutations = 1
 for fileName in finalList:
     file2Work=os.path.join(WorkingDir,fileName)

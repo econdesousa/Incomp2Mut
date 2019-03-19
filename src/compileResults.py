@@ -128,7 +128,7 @@ def main(WorkingDir, resultFolderName="compiledResults"):
     for f in finalList:
         tmp = f.split(sep=os.sep)
         inDir = os.path.dirname(f)
-        outFileName = os.path.join(pDir, tmp[-2] + ".txt")
+        outFileName = os.path.join(pDir, tmp[-2] + ".tsv")
 
         d2F, d2M, d2Fset, d2Mset = ReadVecData(f)
         # PossibleCases = { "trios" : 1, "Duos Father": 2, "Duos Mother": 3}
