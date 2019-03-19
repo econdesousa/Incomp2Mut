@@ -93,7 +93,7 @@ def exportReport(outFileName, inFileName, d2F, d2M):
 
 def main(WorkingDir, resultFolderName="compiledResults"):
     finalList = getFileNames()
-
+    print("finalList =", finalList)
     print("\n\n", finalList[0])
     pDir = os.path.abspath(os.path.join(WorkingDir, os.pardir))
     pDir = os.path.join(pDir, resultFolderName);
