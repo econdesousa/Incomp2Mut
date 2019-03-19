@@ -113,8 +113,9 @@ def exportReport(outFileName, inFileName, d2F, d2M):
 
 def main(WorkingDir, resultFolderName="compiledResults"):
     finalList = getFileNames()
-    pDir = os.path.abspath(os.path.join(WorkingDir, os.pardir))
-    pDir = os.path.join(pDir, resultFolderName);
+    pDir=WorkingDir
+    #pDir = os.path.abspath(os.path.join(WorkingDir, os.pardir))
+    pDir = os.path.join(pDir, resultFolderName)
     print("outDIR = ", pDir)
     if not os.path.exists(pDir):
         os.makedirs(pDir)
