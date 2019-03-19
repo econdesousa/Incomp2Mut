@@ -1,2 +1,0 @@
-"dist_bimodal"
-1E-3	0.1
