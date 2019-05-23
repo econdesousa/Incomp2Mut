@@ -20,20 +20,7 @@ finalList=[x for x in tmpList if 'mutationrate' not in x]
 
 NumbSymulations = 10**6
 
-NumbMutations = 1
-for fileName in finalList:
-    file2Work=os.path.join(WorkingDir,fileName)
-    ForcedMut_Duos_Aut(PATH=file2Work, nMut=NumbMutations, nSim=NumbSymulations,seed=int(rd.uniform(0,1)*10000000))
-
-for fileName in finalList:
-    file2Work=os.path.join(WorkingDir,fileName)
-    ForcedMut_Trios_Aut(PATH=file2Work,nMut=NumbMutations,nSim=NumbSymulations,seed=int(rd.uniform(0,1)*10000000))
-
 NumbMutations = 2
-for fileName in finalList:
-    file2Work=os.path.join(WorkingDir,fileName)
-    ForcedMut_Duos_Aut(PATH=file2Work, nMut=NumbMutations, nSim=NumbSymulations,seed=int(rd.uniform(0,1)*10000000))
-
 for fileName in finalList:
     file2Work=os.path.join(WorkingDir,fileName)
     ForcedMut_Trios_Aut(PATH=file2Work,nMut=NumbMutations,nSim=NumbSymulations,seed=int(rd.uniform(0,1)*10000000))

@@ -16,11 +16,6 @@ def ForcedMut_Duos_FatherDaughter_X(PATH="Markers/APOAI1.txt",nMut=1,nSim=100,se
     # initialize variables
     silent = True  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
     save2File = False  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
-    compatibility_trios = 0
-    one_step_mutation_trios = 0
-    two_step_mutation_trios = 0
-    something_else_trios = 0
-
 
     # ####################################################
     # 3
@@ -34,7 +29,7 @@ def ForcedMut_Duos_FatherDaughter_X(PATH="Markers/APOAI1.txt",nMut=1,nSim=100,se
     alleles, frequencies = Read_Two_Column_File(file_path)
     #alleles, frequencies = ReadMutRate(file_path + "mutationRate")
 
-    f1, f2 = initializeOutFiles(outFile1, outFile2, outFile3,save2File)
+    f1, f2 = initializeOutFiles(outFile1, outFile2, outFile3, save2File)
 
     # ####################################################
     # 4
@@ -67,4 +62,3 @@ def ForcedMut_Duos_FatherDaughter_X(PATH="Markers/APOAI1.txt",nMut=1,nSim=100,se
     if save2File:
         f1.close()
     f2.close()
-

@@ -81,6 +81,3 @@ def genFamiliesXson(alleles, frequencies, mutStep=1):
     index = 0 #just one allele, thus index must be 0
     mutation_step = mutation(mutStep)
     return father, mother, child, mutation_step, index
-
-
-

@@ -71,4 +71,3 @@ def ForcedMut_Duos_Aut(PATH="Markers/APOAI1.txt",nMut=1,nSim=100,seed=7644774):
     if save2File:
         f1.close()
     f2.close()
-

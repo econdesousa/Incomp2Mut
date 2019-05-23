@@ -2,9 +2,9 @@ import tkinter as tk
 from tkinter import filedialog
 import os
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_pdf import PdfPages
+#import pandas as pd
+#import matplotlib.pyplot as plt
+#from matplotlib.backends.backend_pdf import PdfPages
 
 
 
@@ -25,7 +25,7 @@ def getDirNames():
     return dirList
 
 
-dirList = getDirNames()
+#dirList = getDirNames()
 
 
 def getFileNames():
@@ -71,8 +71,9 @@ def ReadVecData(f):
             d2M.append(p[1])
             iteration.append(p[2])
         it += 1
-        d2Fset = set(d2F)
-        d2Mset = set(d2M)
+
+    d2Fset = set(d2F)
+    d2Mset = set(d2M)
 
     return d2F, d2M, d2Fset, d2Mset
 
@@ -116,7 +117,6 @@ def main(WorkingDir, resultFolderName="compiledResults"):
     pDir=WorkingDir
     #pDir = os.path.abspath(os.path.join(WorkingDir, os.pardir))
     pDir = os.path.join(pDir, resultFolderName)
-    print("outDIR = ", pDir)
     if not os.path.exists(pDir):
         os.makedirs(pDir)
     else:
