@@ -2,6 +2,7 @@ def FromFile_Trios_Daughter_X(PATH="Markers/APOAI1.txt", nSim=100,seed=7644774):
     # ####################################################
     # 1
     # import modules and functions
+    print(seed)
     import pyperclip
     pyperclip.copy ( seed )
     from genFamilyAutossomes import genFamiliesXdaughter

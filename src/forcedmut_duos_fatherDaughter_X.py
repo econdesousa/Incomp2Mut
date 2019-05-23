@@ -2,6 +2,7 @@ def ForcedMut_Duos_FatherDaughter_X(PATH="Markers/APOAI1.txt",nMut=1,nSim=100,se
     # ####################################################
     # 1
     # import modules and functions
+    print(seed)
     import pyperclip
     pyperclip.copy ( seed )
     from genFamilyAutossomes import genFamiliesXdaughter
