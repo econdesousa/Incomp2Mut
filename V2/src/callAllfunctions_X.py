@@ -30,13 +30,12 @@ RandomThresh=0  # 0: all muts on Male
 for fileName in finalList:
     file2Work=os.path.join(WorkingDir,fileName)
     ForcedMut_Duos_FatherDaughter_X(PATH=file2Work, nMutMale=NumbMutationsMale, nMutFemale=NumbMutationsFemale, rThresh=RandomThresh, nSim=NumbSymulations,seed=int(rd.uniform(0,1)*10000000))
-    """
     ForcedMut_Duos_MotherDaughter_X(PATH=file2Work, nMutMale=NumbMutationsMale, nMutFemale=NumbMutationsFemale, rThresh=RandomThresh, nSim=NumbSymulations,seed=int(rd.uniform(0,1)*10000000))
     ForcedMut_Duos_MotherDaughter_X(PATH=file2Work, nMutMale=NumbMutationsMale, nMutFemale=NumbMutationsFemale, rThresh=RandomThresh, nSim=NumbSymulations,seed=int(rd.uniform(0,1)*10000000))
     ForcedMut_Duos_MotherSon_X(PATH=file2Work, nMutFemale=NumbMutationsFemale, nSim=NumbSymulations,seed=int(rd.uniform(0,1)*10000000))
     ForcedMut_Trios_Daughter_X(PATH=file2Work, nMutMale=NumbMutationsMale, nMutFemale=NumbMutationsFemale, rThresh=RandomThresh, nSim=NumbSymulations,seed=int(rd.uniform(0,1)*10000000))
-    """
-"""
+
+
 NumbMutationsMale = 2
 NumbMutationsFemale = 2
 RandomThresh=0  # 0: all muts on Male
@@ -51,4 +50,3 @@ for fileName in finalList:
     ForcedMut_Duos_MotherSon_X(PATH=file2Work, nMutFemale=NumbMutationsFemale, nSim=NumbSymulations,seed=int(rd.uniform(0,1)*10000000))
     ForcedMut_Trios_Daughter_X(PATH=file2Work, nMutMale=NumbMutationsMale, nMutFemale=NumbMutationsFemale, rThresh=RandomThresh, nSim=NumbSymulations,seed=int(rd.uniform(0,1)*10000000))
 
-"""
