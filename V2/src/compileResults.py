@@ -167,15 +167,39 @@ def ReadVecData_v3(f):  # data is composed by 16 cols: 8 vectors of type [d2F d2
             if math.isnan(y6): y6=0
             if math.isnan(y7): y7=0
             if math.isnan(y8): y8=0
-            vecFather=[x1, x2, x3, x4, x5, x6, x7, x8]
+            vecFather = [x1, x2, x3, x4, x5, x6, x7, x8]
+            vecFather = [ round ( i , 1 ) for i in vecFather ]
+            x1 = vecFather[0]
+            x2 = vecFather[1]
+            x3 = vecFather[2]
+            x4 = vecFather[3]
+            x5 = vecFather[4]
+            x6 = vecFather[5]
+            x7 = vecFather[6]
+            x8 = vecFather[7]
             if all([math.isinf(x) for x in vecFather]):
                 x1 = 0; x2 = 0; x3 = 0; x4 = 0; x5 = 0; x6 = 0; x7 = 0; x8 = 0
+                vecFather = [ x1 , x2 , x3 , x4 , x5 , x6 , x7 , x8 ]
 
             vecMother=[y1, y2, y3, y4, y5, y6, y7, y8]
+            vecMother = [ round ( i , 1 ) for i in vecMother ]
+            y1 = vecMother[0]
+            y2 = vecMother[1]
+            y3 = vecMother[2]
+            y4 = vecMother[3]
+            y5 = vecMother[4]
+            y6 = vecMother[5]
+            y7 = vecMother[6]
+            y8 = vecMother[7]
             if all([math.isinf(x) for x in vecMother]):
                 y1 = 0; y2 = 0; y3 = 0; y4 = 0; y5 = 0; y6 = 0; y7 = 0; y8 = 0
+                vecMother = [ y1 , y2 , y3 , y4 , y5 , y6 , y7 , y8 ]
 
-            vec=[x1+y1,x2+y2,x3+y3,x4+y4,x5+y5,x6+y6,x7+y7,x8+y8]
+            for i in range ( len ( vec ) ) :
+                if math.trunc ( vec [ i ] ) != vec [ i ] :
+                    vec [ i ] = vec [ i ] + 1000
+
+            vec = [ x + y for x , y in zip ( vecFather , vecMother) ]
             vecstr=['-'.join([str(x1),str(y1)]),
                     '-'.join([str(x2), str(y2)]),
                     '-'.join([str(x3), str(y3)]),
