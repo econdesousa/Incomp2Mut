@@ -195,11 +195,12 @@ def ReadVecData_v3(f):  # data is composed by 16 cols: 8 vectors of type [d2F d2
                 y1 = 0; y2 = 0; y3 = 0; y4 = 0; y5 = 0; y6 = 0; y7 = 0; y8 = 0
                 vecMother = [ y1 , y2 , y3 , y4 , y5 , y6 , y7 , y8 ]
 
-            for i in range ( len ( vec ) ) :
-                if math.trunc ( vec [ i ] ) != vec [ i ] :
-                    vec [ i ] = vec [ i ] + 1000
+            vec = [x + y for x, y in zip(vecFather, vecMother)]
+            for i in range(len(vec)):
+                if math.trunc(vec[i]) != vec[i]:
+                    vec[i] = vec[i] + 1000
+                    print (vec[i])
 
-            vec = [ x + y for x , y in zip ( vecFather , vecMother) ]
             vecstr=['-'.join([str(x1),str(y1)]),
                     '-'.join([str(x2), str(y2)]),
                     '-'.join([str(x3), str(y3)]),
