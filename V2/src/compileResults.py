@@ -181,6 +181,10 @@ def ReadVecData_v3(f):  # data is composed by 16 cols: 8 vectors of type [d2F d2
                 x1 = 0; x2 = 0; x3 = 0; x4 = 0; x5 = 0; x6 = 0; x7 = 0; x8 = 0
                 vecFather = [ x1 , x2 , x3 , x4 , x5 , x6 , x7 , x8 ]
 
+            for i in range(len(vecFather)):
+                if math.trunc( vecFather [ i ] ) != vecFather [ i ] :
+                    vecFather [ i ] = vecFather [ i ] + 10000
+
             vecMother=[y1, y2, y3, y4, y5, y6, y7, y8]
             vecMother = [ round ( i , 1 ) for i in vecMother ]
             y1 = vecMother[0]
@@ -195,11 +199,12 @@ def ReadVecData_v3(f):  # data is composed by 16 cols: 8 vectors of type [d2F d2
                 y1 = 0; y2 = 0; y3 = 0; y4 = 0; y5 = 0; y6 = 0; y7 = 0; y8 = 0
                 vecMother = [ y1 , y2 , y3 , y4 , y5 , y6 , y7 , y8 ]
 
+
+            for i in range(len(vecMother)):
+                if math.trunc( vecMother [ i ] ) != vecMother [ i ] :
+                    vecMother [ i ] = vecMother [ i ] + 10000
+
             vec = [x + y for x, y in zip(vecFather, vecMother)]
-            for i in range(len(vec)):
-                if math.trunc(vec[i]) != vec[i]:
-                    vec[i] = vec[i] + 1000
-                    print (vec[i])
 
             vecstr=['-'.join([str(x1),str(y1)]),
                     '-'.join([str(x2), str(y2)]),
