@@ -171,7 +171,7 @@ def  countincomp_v2(child, father=0, mother=0):
         print("###########################################")
         print("###########################################")
         print("Mother with just one allele")
-        print("Check if your dealing with Y chromosome")
+        print("Check what happens")
         print("###########################################")
         print("###########################################")
         print("###########################################")
