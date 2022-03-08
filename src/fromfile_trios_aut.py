@@ -18,8 +18,8 @@ def FromFile_Trios_Aut(PATH="Markers/APOAI1.txt", nSim = 100,seed=7644774):
     # ####################################################
     # 2
     # initialize variables
-    silent = True  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
-    save2File = False  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
+    silent = True  # Silent mode. Remove all print statments if true
+    save2File = False  # save prints to file instead of displaying on screen
 
     # ####################################################
     # 3
