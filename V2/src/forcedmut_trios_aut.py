@@ -15,8 +15,8 @@ def ForcedMut_Trios_Aut(PATH="Markers/APOAI1.txt", nMutMale=1, nMutFemale=1, rTh
     # ####################################################
     # 2
     # initialize variables
-    silent = False  # Modo silencioso, Qd fore para correr a serio com muito casos o silent tem de ser True. nesses casos nao se faz prints de ecra
-    save2File = True  # Aquilo que seria de imprimir para o ecra pode ir para um ficheiro
+    silent = False  # Silent mode. Remove all print statments if true
+    save2File = True  # save prints to file instead of displaying on screen
     compatibility_trios = 0
     one_step_mutation_trios = 0
     two_step_mutation_trios = 0
