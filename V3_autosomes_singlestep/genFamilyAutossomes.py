@@ -2,7 +2,7 @@ from random import choices, random, seed
 from numpy import *
 import pyperclip
 seed2Use = pyperclip.paste()
-print(seed2Use)
+#print(seed2Use)
 seed(seed2Use)
 
 # ####################################################

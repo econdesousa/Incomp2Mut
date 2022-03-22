@@ -13,7 +13,7 @@ def outFileName(save2File, DIR="output", fp=0):
     else:
         exit("no \"marker data\" available")
 
-    print(file_path)
+    #print(file_path)
     inDir = os.path.dirname(file_path)
     baseName=os.path.basename(file_path)
     baseName=baseName.split('.txt')
@@ -93,3 +93,20 @@ def initializeOutFiles(outFile1, outFile2, outFile3,save2File,legacy=1):
         f3 = 0
 
     return f1, f2
+
+
+def readCompiled00(resultsCompiledFileName):
+    data = open(resultsCompiledFileName, 'r')
+    out = -1
+    for line in data:
+        #split line by tab
+        p = line.split(sep='\t')
+        x = p[1].split('-')
+        x = [float(eval(i)) for i in x]
+        if (x[0] == 0.0 and x[1] == 0.0):
+            out = float(p[2])
+            return out
+    return out
+
+
+

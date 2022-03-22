@@ -93,15 +93,4 @@ def dist2Vecs(vec1, vec2):
     return [abs(vec1[0] - vec2[0]), abs(vec1[1] - vec2[1])]
 
 
-"""
-father=[10,10]
-mother=[12,11]
-child=[12,11]
-vec=countincomp_v2(child, father, mother)
-print(vec)
-for i in range(len(vec)):
-    for j in range(len(vec[0])):
-        print(vec[i][j],end="\t")
-print(float('inf'))
-"""
 

@@ -2,7 +2,7 @@ def ForcedMut_Duos_Aut(PATH="Markers/APOAI1.txt", nMutMale=1, nMutFemale=1, rThr
     # ####################################################
     # 1
     # import modules and functions
-    print(seed)
+    #print(seed)
     import pyperclip
     pyperclip.copy(seed)
     from genFamilyAutossomes import genFamilies_v2
@@ -38,6 +38,10 @@ def ForcedMut_Duos_Aut(PATH="Markers/APOAI1.txt", nMutMale=1, nMutFemale=1, rThr
     # main loop
 
     for loop in range(nSim):
+        if not loop % 1000:
+            sz = round(loop * 100 / nSim)
+            b = "["*1+"." * sz + " " * (100 - sz) + "]"*1
+            print(b, end="\r")
 
         father, mother, child, mutation_step, index = genFamilies_v2(alleles, frequencies, nMutMale, nMutFemale, rThresh)
         child = mutationchild(child, mutation_step, index)
@@ -50,5 +54,7 @@ def ForcedMut_Duos_Aut(PATH="Markers/APOAI1.txt", nMutMale=1, nMutFemale=1, rThr
 
         exportOutTable(outFile3, father, mother, child, mutation_step, index, distFatherMother,
                        display=not silent, save2file=save2File, iteration=loop+1)
-
+        
+    
+    print(" "*102, end="\r")
     f2.close()

@@ -4,12 +4,8 @@ import tkinter as tk
 from collections import Counter
 from tkinter import filedialog
 
-root = tk.Tk()
-root.withdraw()
-WorkingDir = filedialog.askdirectory(initialdir=os.path.join(os.getcwd(), "Markers"), title='Please select a directory')
 
-
-def getDirNames():
+def getDirNames(WorkingDir):
     dirList = []
     for dirname, dirnames, filenames in os.walk(WorkingDir):
         # print path to all subdirectories first.
@@ -23,8 +19,8 @@ def getDirNames():
 # dirList = getDirNames()
 
 
-def getFileNames():
-    dirList = getDirNames()
+def getFileNames(WorkingDir):
+    dirList = getDirNames(WorkingDir)
     finalList = []
     for dirNameIter in dirList:
         fList = os.listdir(dirNameIter)
@@ -57,7 +53,9 @@ def ReadVecData_v3(f):  # data is composed by 16 cols: 8 vectors of type [d2F d2
     it = 0
     data = open(f, 'r')
     header = 1
-    for line in data:
+    for iterator,line in enumerate(data):
+        if not iterator % 1000:
+            print("Compiling: ", iterator,end="\r")
         if it >= header:
             P = line.split(sep="\t")
             x1 = float(P[0])
@@ -151,7 +149,7 @@ def exportReport_v2(outFileName, inFileName, out):
     #outFileName: path to file to be edited
     #inFileName: name to append to data
     #out data to export
-    print(outFileName)
+    #print(outFileName)
     # sort data to avoid having e.g. [0,1] and [1,0] that is equivalent -> 1 mutation step
 
     # count unique rows of matrix out
@@ -172,11 +170,12 @@ def exportReport_v2(outFileName, inFileName, out):
         inFileName = ""
 
     fid.close()
+    return d
 
 
-def main(WorkingDir, resultFolderName="compiledResults"):
-    finalList = getFileNames()
-    print("finalList :", finalList)
+def main_compile(WorkingDir, resultFolderName="compiledResults"):
+    finalList = getFileNames(WorkingDir)
+    #print("finalList :", finalList)
     pDir=WorkingDir
     #pDir = os.path.abspath(os.path.join(WorkingDir, os.pardir))
     pDir = os.path.join(pDir, resultFolderName)
@@ -185,25 +184,27 @@ def main(WorkingDir, resultFolderName="compiledResults"):
     else:
         files = [f for f in os.listdir(pDir) if os.path.isfile(os.path.join(pDir, f))]
         for f in files:
-            print(os.path.join(pDir, f))
+            #print(os.path.join(pDir, f))
             os.remove(os.path.join(pDir, f))
 
-    for f in finalList:
-        print("f :", f)
+    d = [None] * len(finalList)
+    for iter, f in enumerate(finalList):
+        #print("f :", f)
 
         tmp = f.split(sep=os.sep)
         inDir = os.path.dirname(f)
         outFileName = os.path.join(pDir, tmp[-2] + ".tsv")
 
         out = ReadVecData_v3(f)
-        exportReport_v2(outFileName, tmp[-1], out)
+        d[iter] = exportReport_v2(outFileName, tmp[-1], out)
+    
+    print(" "*100,end="\r")
+    return d
 
-"""
-f='D:/Dropbox/Post-Doc/Colaboracoes/Nadia_Simulations/SofiaAntaoSousa/Incomp2Mut_home/src/Markers/artificiais/ForcedMut_Duos_FatherDaughter_X_nMut_1_1/dist_bimodal_ForcedMut_Duos_FatherDaughter_X_nMut_1_1_vecFatherMother.txt'
-f=open(f,mode="r")
-x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6, x7, y7, x8, y8 = ReadVecData(f)
-for i in range(len(x1)):
-    print([[x1,y1], [x2,y2], [x3,y3], [x4,y4], [x5,y5], [x6,y6], [x7,y7], [x8,y8]])
-"""
 
-main(WorkingDir)
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.withdraw()
+    WorkingDir = filedialog.askdirectory(initialdir=os.path.join(os.getcwd(), "Markers"), title='Please select a directory')
+    main_compile(WorkingDir)
+
