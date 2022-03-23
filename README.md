@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/174554877.svg)](https://zenodo.org/badge/latestdoi/174554877)
+
 # Incomp2Mut
 
 Here we aim to assess mutation rates from incompatibility rates obtained through the Mendelian incompatibility approach.
