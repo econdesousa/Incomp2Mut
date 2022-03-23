@@ -28,7 +28,7 @@ To run the code for a single marker there are two options: runing directly from 
 * From command line: "python main.py" or 
 * From executable: double clicking on it.
 
-A GUI will show up and the user must choose the configurations he/she wants:
+A GUI will show up and the user must choose the configurations he/she wants (see video tutorial bellow):
 * Familial configuration: choose between Duos (Father / Child) or Trios (Father / Mother / Child)
 * Incompatibility Rate: Enter here the **observed** incompatibility rate.
 * Number of Simulations: choose the desired number of simulations
@@ -44,6 +44,9 @@ for Duos in Autossomal markers with a fixed 1 step mutation for 100000 simulatio
 
 The parameters will also be displayed in the file along with the % of hidden mutations and the corrected mutation rate.
 
+https://user-images.githubusercontent.com/16939981/159753290-b1852bed-922e-46d2-9236-64931ec2470e.mp4
+
+
 
 ### Marker files
 Please see the marker file in the example "Incomp2Mut/src/Markers/CSF1PO_Norway.txt"
@@ -57,10 +60,4 @@ For any questions please contact:
 * Nádia Pinto: npinto@ipatimup.pt
 * Sofia Antão-Sousa: sofias@ipatimup.pt
 * Eduardo Conde-Sousa: econdesousa@gmail.com
-
-
-
-
-https://user-images.githubusercontent.com/16939981/159753290-b1852bed-922e-46d2-9236-64931ec2470e.mp4
-
 
