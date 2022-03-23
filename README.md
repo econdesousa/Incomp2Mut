@@ -57,3 +57,6 @@ For any questions please contact:
 * Nádia Pinto: npinto@ipatimup.pt
 * Sofia Antão-Sousa: sofias@ipatimup.pt
 * Eduardo Conde-Sousa: econdesousa@gmail.com
+
+
+https://github.com/econdesousa/Incomp2Mut/blob/master/stepbystep.mp4?raw=true
