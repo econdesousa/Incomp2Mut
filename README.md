@@ -52,5 +52,9 @@ Please see the marker file in the example "Incomp2Mut/src/Markers/CSF1PO_Norway.
 	* First collumn with the allele (in quotes)
 	* Second column with the corresponding allele frequency
 	
-For more information please contact:
-Nádia Pinto: npinto@ipatimup.pt
+# Contacts:
+For general questions please contact:
+* Nádia Pinto: npinto@ipatimup.pt
+For code related questions please contact:
+* Sofia Antão-Sousa: sofias@ipatimup.pt
+* Eduardo Conde-Sousa: econdesousa@gmail.com
