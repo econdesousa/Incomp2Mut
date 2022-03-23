@@ -8,8 +8,8 @@ This work will cover autossomes for familial duos (parent-child) and trios (pare
 Mutation rates estimation depends on population allele frequency distribution: the case of autosomal microsatellites**
 
 
-# USAGE:
-## Batch Processing
+## USAGE:
+### Batch Processing
 To reproduce simulations performed in the paper, please install python (tested on python 3.8) and run pip "install -r requirements.txt".
 
 Use functions callAllfunctions_autosomes_mut1_duos.py and callAllfunctions_autosomes_mut1_trios.py to generate familial profiles for duos/trios and get allele distance between child and each parent.
@@ -22,7 +22,7 @@ Use the function compileResults.py (same flder as input) to generate a resume of
 * 0-1 means compatibility with the father and distance of one step to the mother
 * ...
 
-## Single marker
+### Single marker
 To run the code for a single marker there are two options: runing directly from python or via an executable (available in folder "dist"). 
 
 * From command line: "python main.py" or 
@@ -45,14 +45,14 @@ for Duos in Autossomal markers with a fixed 1 step mutation for 100000 simulatio
 The parameters will also be displayed in the file along with the % of hidden mutations and the corrected mutation rate.
 
 
-## Marker files
+### Marker files
 Please see the marker file in the example "Incomp2Mut/src/Markers/CSF1PO_Norway.txt"
 * The first row should contain the name of the marker (in quotes).
 * The following rows should contain two collumns separated by a tab.
 	* First collumn with the allele (in quotes)
 	* Second column with the corresponding allele frequency
 	
-# Contacts:
+## Contacts:
 For any questions please contact:
 * Nádia Pinto: npinto@ipatimup.pt
 * Sofia Antão-Sousa: sofias@ipatimup.pt
