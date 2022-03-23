@@ -1,7 +1,7 @@
 # Incomp2Mut
 
-Here we aim to access mutation rates from incompatibility rates.
-This work will cover autossomes for duos and trios.
+Here we aim to assess mutation rates from incompatibility rates obtained through the Mendelian incompatibility approach.
+This work will cover autossomes for familial duos (parent-child) and trios (parents-child).
 
 ## Related publications
 **Antão-Sousa S, Conde-Sousa E, Gusmão L, Amorim A, Pinto N (2022 submitted) 
@@ -10,7 +10,7 @@ Mutation rates estimation depends on population allele frequency distribution: t
 
 # USAGE:
 ## Batch Processing
-To repoduce code from paper, please install python (tested on python 3.8) and run pip "install -r requirements.txt".
+To reproduce simulations performed in the paper, please install python (tested on python 3.8) and run pip "install -r requirements.txt".
 
 Use functions callAllfunctions_autosomes_mut1_duos.py and callAllfunctions_autosomes_mut1_trios.py to generate familial profiles for duos/trios and get allele distance between child and each parent.
 
@@ -32,7 +32,7 @@ A GUI will show up and the user must choose the configurations he/she wants:
 * Familial configuration: choose between Duos (Father / Child) or Trios (Father / Mother / Child)
 * Incompatibility Rate: Enter here the **observed** incompatibility rate.
 * Number of Simulations: choose the desired number of simulations
-	* for the markers we tested n>100 000 will result in similar Mutation Rates. If n is too big the simulations may take a while depending on the user machine. Please wait for the "Done!" window before disconnect.
+	* for the markers we tested n>100 000 will result in similar Mutation Rates. If n is too big the simulations may take a while depending on the user machine. Please wait for the "Done!" window before disconnecting.
 * Random Seed: Starting point in generating random numbers. This can be any number. Using the same number in consecutive runs (with same parameters) will ensure reproducible results. You can enlarge n or test with different random seeds to evaluate convergence of the result.
 * OK! button: Press this button to run.
 
