@@ -6,9 +6,9 @@ Here we aim to assess mutation rates from incompatibility rates obtained through
 This work will cover autossomes for familial duos (parent-child) and trios (parents-child).
 
 ## Related publications
-**Antão-Sousa S, Conde-Sousa E, Gusmão L, Amorim A, Pinto N (2022 submitted) 
+**Antão-Sousa S, Conde-Sousa E, Gusmão L, Amorim A, Pinto N (2022) 
 Mutation rates estimation depends on population allele frequency distribution: the case of autosomal microsatellites**
-
+https://doi.org/10.3390/genes13071248
 
 ## USAGE:
 ### Batch Processing
